@@ -289,28 +289,107 @@
         </div>
         <div class="form-group">
           <div class="col-xs-12">
+            <label for="InputEmail">Email</label>
+            <div class="input-group">
+              <input type="email" class="form-control" name="email" placeholder="Email" required>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            </div>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
             <label for="InputCity">Equipo</label>
 
               <div class="input-group">
                 <select name="equipo" class="form-control" required>
-                  <option value='ronquillo'>Ronquillo C.F.</option>";
-                  <option value='castillo'>Castillo C.F.</option>";
-                  <option value='torre'>Torre Reina C.D.</option>";
-                  <option value='burguillos'>C.D. Burguillos</option>";
-                  <option value='guillena'>Guillena C.F.</option>";
-                  <option value='brenes'>Brenes Balompié</option>";
-                  <option value='algaba'>Atco. Algabeño</option>";
-                  <option value='alcala'>Alcalá del Río C.F.</option>";
-                  <option value='cazalla'>Cazallla Sierra</option>";
-                  <option value='cantillana'>Cantillana C.D.</option>";
-                  <option value='aznalcollar'>C.D. Aznalcollar</option>";
-                  <option value='constantina'>Constantina C.D.</option>";
-                  <option value='santiponce'>U.D. Santiponce</option>";
-                  <option value='camas'>Camas C.F.</option>";
+                  <option value='1'>Ronquillo C.F.</option>";
+                  <option value='2'>Castillo C.F.</option>";
+                  <option value='3'>Torre Reina C.D.</option>";
+                  <option value='4'>C.D. Burguillos</option>";
+                  <option value='5'>Guillena C.F.</option>";
+                  <option value='6'>Brenes Balompié</option>";
+                  <option value='7'>Atco. Algabeño</option>";
+                  <option value='8'>Alcalá del Río C.F.</option>";
+                  <option value='9'>Cazallla Sierra</option>";
+                  <option value='10'>Cantillana C.D.</option>";
+                  <option value='11'>C.D. Aznalcollar</option>";
+                  <option value='12'>Constantina C.D.</option>";
+                  <option value='13'>U.D. Santiponce</option>";
+                  <option value='14'>Camas C.F.</option>";
                 </select>
                 <span class="input-group-addon"><span class="glyphicon  glyphicon-menu-down"></span></span>
               </div>
               <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <label for="InputStreetName">¿Quieres cargar los equipos por defecto?</label>
+            <div class="input-group">
+              <div class="form-inline required">
+                <div class="form-group has-feedback">
+                  <label class="input-group">
+                    <span class="input-group-addon">
+                <input type="radio" name="defecto" value="si" required/>
+              </span>
+                    <div class="form-control form-control-static" id='entre'>
+                      Sí
+                    </div>
+                    <span class="glyphicon form-control-feedback "></span>
+                  </label>
+                </div>
+                <div class="form-group has-feedback ">
+                  <label class="input-group">
+                    <span class="input-group-addon">
+                            <input type="radio" name="defecto" value="no" required/>
+                        </span>
+                    <div class="form-control form-control-static" id='cola'>
+                      No
+                    </div>
+                    <span class="glyphicon form-control-feedback"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <label for="InputStreetName">¿Quieres cargar los jugadores por defecto?</label>
+            <div class="input-group">
+              <div class="form-inline required">
+                <div class="form-group has-feedback">
+                  <label class="input-group">
+                    <span class="input-group-addon">
+                <input type="radio" name="jugador" value="si" required/>
+              </span>
+                    <div class="form-control form-control-static" id='entre'>
+                      Sí
+                    </div>
+                    <span class="glyphicon form-control-feedback "></span>
+                  </label>
+                </div>
+                <div class="form-group has-feedback ">
+                  <label class="input-group">
+                    <span class="input-group-addon">
+                            <input type="radio" name="jugador" value="no" required/>
+                        </span>
+                    <div class="form-control form-control-static" id='cola'>
+                      No
+                    </div>
+                    <span class="glyphicon form-control-feedback"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group-addon">
+            <input type="submit" name="enviar" id="submit" value="Guardar" class="btn btn-success pull-right">
           </div>
         </div>
       </div>

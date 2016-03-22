@@ -39,9 +39,7 @@
         <div class="col-sm-8">
           <?php
 
-            $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-            //$conection->set_charset("utf8");
-            mysqli_set_charset($connection, "utf8");
+            include '../admin/conexion.php';
 
             $id=$_GET['id'];
 

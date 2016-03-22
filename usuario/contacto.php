@@ -23,9 +23,7 @@
     <?php
         include 'include.php';
 
-        $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-        //$conection->set_charset("utf8");
-        mysqli_set_charset($connection, "utf8");
+        include '../admin/conexion.php';
 
         if($result = $connection->query("SELECT correo FROM ENTRENADOR WHERE rol='admin' limit 1;")){
           $obj=$result->fetch_object();

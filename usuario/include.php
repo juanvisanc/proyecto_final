@@ -8,8 +8,7 @@
       $usuario=$_POST['usuario'];
       $pass=$_POST['password'];
       //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-
+      include '../admin/conexion.php';
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);

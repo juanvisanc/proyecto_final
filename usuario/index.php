@@ -29,9 +29,7 @@
   //Include comun
   include 'include.php';
 
-  $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-  //$conection->set_charset("utf8");
-  mysqli_set_charset($connection, "utf8");
+  include '../admin/conexion.php';
 
     //sacamos nombre e id de cada equipo
     if($result = $connection->query("SELECT nombre, idEquipo FROM EQUIPO;")){
