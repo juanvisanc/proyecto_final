@@ -7,7 +7,7 @@
     $usuario=$_SESSION['usuario'];
 
     $connection->query("UPDATE ENTRENADOR SET tema = '$tema'
-      WHERE nombreUsu=$usuario;");
+      WHERE nombreUsu='$usuario';");
 
       $_SESSION['tema']=$tema;
       header("Location: ../usuario/index.php");

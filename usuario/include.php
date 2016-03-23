@@ -20,7 +20,7 @@
       $consulta="select * from ENTRENADOR where
       nombreUsu='$usuario' and password=md5('$pass');";
 
-      //Comprovamos el logueo
+      //Comprobamos el logueo
       if ($result = $connection->query($consulta)) {
           $obj = $result->fetch_object();
 
@@ -52,7 +52,8 @@
               $obj3=$result3->fetch_object();
               $_SESSION["equipo"]=$obj3->idEquipo;
             }
-
+            $tema=$_SESSION['tema'];
+          
             //Una vez bien logueados, nos manda al index.
             header("Location: index.php");
           }
