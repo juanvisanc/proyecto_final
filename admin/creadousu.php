@@ -10,9 +10,7 @@
 
         if (isset($_POST['nombre']) and isset($_SESSION["usuario"])) {
           if($_SESSION['rol']==='admin'){
-            $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-            //$conection->set_charset("utf8");
-            mysqli_set_charset($connection, "utf8");
+            include 'conexion.php';
 
             if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $mysqli->connect_error);
@@ -30,7 +28,7 @@
             //hay que insertar en dos tablas, entrenador y entrena o colabora
 
             $connection->query("INSERT INTO ENTRENADOR VALUES
-                  (NULL,'$nombre','$apellidos','$correo','$nombreUsu',md5('$pass'),'$rol');");
+                  (NULL,'$nombre','$apellidos','$correo','$nombreUsu',md5('$pass'),'tema1','$rol');");
                   $result3=$connection->query("SELECT idEntrenador FROM ENTRENADOR WHERE nombreUsu='$nombreUsu';" );
                   $obj3=$result3->fetch_object();
               if ($rol==='admin' or $rol==='entrenador') {

@@ -4,9 +4,7 @@ session_start();
 
   if (isset($_POST['nombre']) and isset($_SESSION["usuario"])) {
   if($_SESSION['rol']==='admin'){
-  $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-  //$conection­>set_charset("utf8");
-  mysqli_set_charset($connection, "utf8");
+  include 'conexion.php';
   if ($connection->connect_errno) {
     printf("Connection failed: %s\n", $mysqli­->connect_error);
     exit();
@@ -34,7 +32,7 @@ if ($_FILES["imagen"]["error"] > 0){
             //recuerden que deben crear un directorio con este mismo nombre
             //en el mismo lugar donde se encuentra el archivo subir.php
             $ruta = "../imagenes/" . $idE.".png";
-            var_dump($ruta);
+            
 
               $resultado = @move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta);
 

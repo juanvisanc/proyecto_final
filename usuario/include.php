@@ -39,6 +39,7 @@
             $_SESSION["rol"]=$obj->rol;
             $_SESSION["usuario"]=$_POST["usuario"];
             $_SESSION["language"]="es";
+            $_SESSION["tema"]=$obj->tema;
 
             //Vemos si usuario es entrenador o colaborador y metemos su equipo en la sesion
             if ($_SESSION["rol"]==='colaborador') {
@@ -62,13 +63,51 @@
   }
   //Si la sesion esta abierta:
     if (isset($_SESSION["usuario"])) {
-      $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-      //$conection->set_charset("utf8");
-      mysqli_set_charset($connection, "utf8");
-
+      include '../admin/conexion.php';
+      $tema=$_SESSION['tema'];
       $usu=$_SESSION['usuario'];
       $result = $connection->query("SELECT idEntrenador from ENTRENADOR where nombreUsu='$usu';");
       $obj = $result->fetch_object();
+      if ($tema==='tema2') {?>
+        <style media="screen">
+        .jumbotron{
+          background-image: url("../imagenes/campo.png");
+          font-family: Georgia, "Times New Roman", Times, serif;
+          font-style: italic;
+        }
+        .navbar{
+          background-color: #406D19;
+          font-style: italic;
+        }
+        .navbar-inverse .navbar-nav>li>a{
+          color: black;
+        }
+        body{
+          font-family: Georgia, "Times New Roman", Times, serif;
+        }
+        </style>
+    <?php  }elseif ($tema==='tema3') {
+      ?>
+        <style media="screen">
+        .jumbotron{
+          background-image: url("../imagenes/copas.png");
+          font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+          font-style: italic;
+          color: black;
+        }
+        .navbar{
+          background-color: #449D44;
+          font-style: italic;
+        }
+        .navbar-inverse .navbar-nav>li>a{
+          color: black;
+        }
+        body{
+          font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        }
+        </style>
+    <?php
+    }
       echo "  <nav class='navbar navbar-inverse'>
           <div class='container-fluid'>
             <div class='navbar-header'>

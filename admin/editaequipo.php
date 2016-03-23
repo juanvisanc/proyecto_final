@@ -20,9 +20,7 @@
     //si hay id del equipo y es admin el usuario
     if (isset($_GET['id'])) {
         if (isset($_SESSION["usuario"]) and $_SESSION['rol']==='admin' ) {
-          $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-          //$conection->set_charset("utf8");
-          mysqli_set_charset($connection, "utf8");
+          include 'conexion.php';
 
           if ($connection->connect_errno) {
             printf("Connection failed: %s\n", $mysqli->connect_error);

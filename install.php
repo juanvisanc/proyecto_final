@@ -44,7 +44,7 @@
               <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
             </div>
             <br>
-            <label for="InputName">Dirección</label>
+            <label for="InputName">Dirección del servidor</label>
             <div class="input-group">
               <input type="text" class="form-control" name="direccion" placeholder="Dirección" required>
               <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
@@ -106,7 +106,7 @@
                   <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
                 </div>
                 <br>
-                <label for="InputName">Dirección</label>
+                <label for="InputName">Dirección del servidor</label>
                 <div class="input-group">
                   <input type="text" class="form-control" name="direccion" placeholder="Dirección" required>
                   <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
@@ -165,6 +165,7 @@
       `correo` varchar(100) DEFAULT NULL,
       `nombreUsu` varchar(50) DEFAULT NULL,
       `password` varchar(64) DEFAULT NULL,
+      `tema` varchar(45) DEFAULT 'tema1',
       `rol` varchar(20) DEFAULT NULL,
       PRIMARY KEY (`idEntrenador`),
       UNIQUE KEY `nombreUsu_UNIQUE` (`nombreUsu`)
@@ -394,10 +395,6 @@
         </div>
       </div>
     </div>
-
-
-
-
 
   <?php }?>
 <?php endif ?>

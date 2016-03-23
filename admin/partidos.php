@@ -13,8 +13,7 @@
 
         //solo entra si es admin
         if (isset($_SESSION['usuario']) and $_SESSION['rol']==='admin') {
-        $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-        mysqli_set_charset($connection, "utf8");
+          include 'conexion.php';
 
         if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $mysqli->connect_error);

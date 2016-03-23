@@ -39,7 +39,7 @@
             <p class="lead">Si tienes alguna duda, sugerencia, proposición o simplemente quieres
               mostrar tu opinión, no dudes en mandar un correo a nuestro administrador.<p>
             <?php echo "<p class='lead'><span class='glyphicon glyphicon-envelope'></span>
-            Correo electrónico: $obj->correo<p>"; ?>
+            Correo electrónico: $obj->correo</p>"; ?>
           </div>
       </div>
 

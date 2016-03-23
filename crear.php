@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Fútbol-7 Sevilla</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="jquery-ui/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="./usuario/css/jugador.css">
+</head>
+<style media="screen">
+  .install{
+    text-align: center;
+  }
+
+</style>
+<body>
 <?php
 
   if (isset($_POST['nombre'])) {
@@ -13,7 +34,7 @@
     $jugador=$_POST['jugador'];
 
     $connection->query("INSERT INTO ENTRENADOR VALUES
-          (NULL,'$nombre','$apellidos','$correo','$usuario',md5('$pass'),'admin');");
+          (NULL,'$nombre','$apellidos','$correo','$usuario',md5('$pass'),'tema1','admin');");
     if ($defecto==='si') {
       $connection->query("INSERT INTO `EQUIPO` (`idEquipo`, `nombre`, `localidad`) VALUES
         (1, 'Ronquillo C.F.', 'El Ronquillo'),
@@ -463,11 +484,43 @@
         }
       }
     $connection->query("INSERT INTO Entrena VALUES (1,$equipo);");
-
-
-  }else {
+?>
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Fútbol-7</h1>
+    <h4>Liga Provincial Sevillana</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="install">Instalación completada</h3>
+    <hr>
+  </div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <p class="lead">Enhorabuena, la instalación se ha completado con éxito.
+      Pulse 'Aceptar' para comenzar a usarla.</p>
+  <div class="form-group">
+    <div class="col-xs-12">
+    <div class="input-group-addon">
+      <a href="usuario/index.php"><input type="button" id="submit" value="Aceptar" class="btn btn-success pull-right"></a>
+    </div>
+  </div>
+  <br>
+</div>
+</div>
+</div>
+<?php
+unlink('install.php');
+    unlink('crear.php');
+}else {
     header("Location: install.php");
 
 }
 
  ?>
+
+
+
+  </body>
+</html>

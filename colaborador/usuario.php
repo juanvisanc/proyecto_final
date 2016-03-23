@@ -4,14 +4,17 @@
   <?php include 'cabecera.php'; ?>
     <link rel="stylesheet" type="text/css" href="../usuario/css/registro.css">
 </head>
+<style media="screen">
+  img{
+    width: 98%;
+  }
+</style>
 <body>
   <?php
   include '../colaborador/include.php';
   if (isset($_SESSION['usuario']) and isset($_GET['id'])) {
 
-      $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-      //$conection->set_charset("utf8");
-      mysqli_set_charset($connection, "utf8");
+      include '../admin/conexion.php';
 
       if ($connection->connect_errno) {
         printf("Connection failed: %s\n", $mysqli->connect_error);
@@ -61,8 +64,62 @@
 
                ?>
              </table>
+            <label for="InputStreetName">Tema</label>
+            <form id="registerForm" method="POST" action="tema.php">
+            <table class="table table-hover text-center">
+              <tr>
+                <td><img src="../imagenes/tema1.png"></td>
+                <td><img src="../imagenes/tema2.png"></td>
+                <td><img src="../imagenes/tema3.png"></td>
+              </tr>
+              <tr>
+                <td><div class="form-group has-feedback ">
+                  <label class="input-group">
+                    <span class="input-group-addon">
+                            <input type="radio" name="tema" value="tema1"
+                        required/>
+                        </span>
+                    <div class="form-control form-control-static">
+                      Tema 1
+                    </div>
+                    <span class="glyphicon form-control-feedback"></span>
+                  </label>
+                </div></td>
+                <td><div class="form-group has-feedback ">
+                  <label class="input-group">
+                    <span class="input-group-addon">
+                            <input type="radio" name="tema" value="tema2"
+                        required/>
+                        </span>
+                    <div class="form-control form-control-static">
+                      Tema 2
+                    </div>
+                    <span class="glyphicon form-control-feedback"></span>
+                  </label>
+                </div></td>
+                <td><div class="form-group has-feedback ">
+                  <label class="input-group">
+                    <span class="input-group-addon">
+                            <input type="radio" name="tema" value="tema3"
+                        required/>
+                        </span>
+                    <div class="form-control form-control-static">
+                      Tema 3
+                    </div>
+                    <span class="glyphicon form-control-feedback"></span>
+                  </label>
+                </div></td>
+              </tr>
+            </table>
+            <div class="form-group">
+              <div class="input-group-addon">
+                <input type="submit" name="enviar" id="submit" value="Guardar" class="btn btn-success pull-right">
+              </div>
+            </div>
+          </form>
+            </div>
           </div>
-        </div>
+
 
     <?php }else {
         header("Location: ../usuario/index.php");

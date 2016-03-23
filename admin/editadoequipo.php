@@ -5,9 +5,7 @@
     //si se pasa nombre del equipo y es admin
     if (isset($_POST['nombre']) and isset($_SESSION["usuario"])) {
       if($_SESSION['rol']==='admin'){
-        $connection = new mysqli("localhost", "usufutbol", "usufutbol", "futbol2");
-        //$conection->set_charset("utf8");
-        mysqli_set_charset($connection, "utf8");
+        include 'conexion.php';
 
         if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $mysqli->connect_error);
