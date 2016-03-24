@@ -127,7 +127,13 @@
                 }
               }
               echo "</table>";
+              if (isset($_SESSION['usuario'])) {
+              echo "<div class='col-md-4'></div>
+              <div class='col-md-4 text-center'>
+                <p><a href='../colaborador/planpdf.php?id=$id'><img class='pdf' src='../imagenes/pdf.png'> Generar pdf</img></a></p>
+              </div>";
 
+              }
               $result->close();
               unset($obj);
               $result2->close();

@@ -14,6 +14,9 @@
   th{
     text-align: center;
   }
+  .pdf{
+    width: 15%;
+  }
 </style>
 
 <!-- script para el dialog-->
@@ -148,6 +151,8 @@
               echo "<a href='../usuario/calendario.php?id=$cont'> $cont</a>";
               $cont=$cont+1;
             }
+
+
             echo "</th></tr>";
             $result->close();
             unset($obj);
@@ -158,6 +163,13 @@
 
          ?>
       </table>
+      <?php if (isset($_SESSION['usuario'])) {
+      echo "<div class='col-md-4'></div>
+      <div class='col-md-4 text-center'>
+        <p><a href='../colaborador/jorpdf.php?id=$id'><img class='pdf' src='../imagenes/pdf.png'> Generar pdf</img></a></p>
+      </div>";
+
+      }?>
     </div>
   </div>
   <footer class="container-fluid text-center">

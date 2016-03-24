@@ -9,6 +9,9 @@
   img{
     width: 4%;
   }
+  .pdf{
+    width: 20%;
+  }
 </style>
 
 <body>
@@ -116,6 +119,12 @@
         }
         ?>
      </table>
+     <?php if (isset($_SESSION['usuario'])) {?>
+     <div class="col-md-4"></div>
+     <div class="col-md-4 text-center">
+       <p><a href="../colaborador/claspdf.php"><img class="pdf" src="../imagenes/pdf.png"> Generar pdf</img></a></p>
+     </div>
+     <?php } ?>
     </div>
   </div>
 
