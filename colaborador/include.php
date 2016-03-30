@@ -62,7 +62,8 @@ if (isset($_SESSION['usuario'])) {
           <ul class='nav navbar-nav'>
             <li><a href='../usuario/index.php'>Inicio</a></li>
             <li><a href='../usuario/clasificacion.php'>Clasificación</a></li>
-            <li><a href='../usuario/calendario.php?id=1'>Calendario</a></li>";
+            <li><a href='../usuario/calendario.php?id=1'>Calendario</a></li>
+            <li><a href='../colaborador/estadisticas.php'>Estadísticas</a></li>";
             if ($_SESSION['rol']==='admin') {
               echo "
               <li class='dropdown'>

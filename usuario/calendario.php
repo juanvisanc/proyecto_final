@@ -107,8 +107,8 @@
           //si no esta logueado o esta logueado pero no es admin solo podra ver y enlazar
           if (!isset($_SESSION['usuario']) or (isset($_SESSION['usuario']) and $_SESSION['rol']!=='admin')){
           while($obj = $result->fetch_object()) {
-            echo "<tr><td><a href='../usuario/estadistica.php?idEq=$obj->lo&idP=$obj->idPartido'>$obj->local</a></td><td id='resultado'>$obj->golesL:$obj->golesV</td>
-                        <td><a href='../usuario/estadistica.php?idEq=$obj->vi&idP=$obj->idPartido'>$obj->visitante</a></td><td>$obj->fecha</td><td>$obj->localidad</td></tr>";
+            echo "<tr><td><a href='../usuario/datos.php?idEq=$obj->lo&idP=$obj->idPartido'>$obj->local</a></td><td id='resultado'>$obj->golesL:$obj->golesV</td>
+                        <td><a href='../usuario/datos.php?idEq=$obj->vi&idP=$obj->idPartido'>$obj->visitante</a></td><td>$obj->fecha</td><td>$obj->localidad</td></tr>";
           }
 
           //sacamos todas las jornadas disponibles para poder linkearlas
@@ -132,10 +132,10 @@
             echo "<tr><form method='POST' action='../admin/guarda_resultado.php'>
             <input type='number' value='$obj->idPartido' name='id' style='display:none' required/>
             <input type='number' value='$id' name='jornada' style='display:none' required/>
-            <td><a href='../usuario/estadistica.php?idEq=$obj->lo&idP=$obj->idPartido'>$obj->local</a></td>
+            <td><a href='../usuario/datos.php?idEq=$obj->lo&idP=$obj->idPartido'>$obj->local</a></td>
             <td><input type='number' class='form-control' value='$obj->golesL' name='golesL' min='0' required></td>
             <td><input type='number' class='form-control' value='$obj->golesV' name='golesV' min='0' required></td>
-            <td><a href='../usuario/estadistica.php?idEq=$obj->vi&idP=$obj->idPartido'>$obj->visitante</a></td><td>$obj->fecha</td>
+            <td><a href='../usuario/datos.php?idEq=$obj->vi&idP=$obj->idPartido'>$obj->visitante</a></td><td>$obj->fecha</td>
             <td><a href='../admin/elimina_partido.php?id=$obj->idPartido&jornada=$id'>
             <span class='glyphicon glyphicon-trash'/></a></td>
             <td>

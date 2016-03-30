@@ -53,7 +53,7 @@
               $_SESSION["equipo"]=$obj3->idEquipo;
             }
             $tema=$_SESSION['tema'];
-          
+
             //Una vez bien logueados, nos manda al index.
             header("Location: index.php");
           }
@@ -122,7 +122,8 @@
               <ul class='nav navbar-nav'>
                 <li><a href='index.php'>Inicio</a></li>
                 <li><a href='clasificacion.php'>Clasificación</a></li>
-                <li><a href='calendario.php?id=1'>Calendario</a></li>";
+                <li><a href='calendario.php?id=1'>Calendario</a></li>
+                <li><a href='../colaborador/estadisticas.php'>Estadísticas</a></li>";
                 if ($_SESSION['rol']==='admin') {
                   echo "
                   <li class='dropdown'>
