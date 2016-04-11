@@ -18,7 +18,7 @@ if (isset($_POST['jugador']) and isset($_SESSION["usuario"])) {
   }
 
   $result = $connection->query("INSERT INTO Juego VALUES ($jugador,$partido,$goles,$ta,$tr);");
-  header("Location: ../usuario/estadistica.php?idEq=$equipo&idP=$partido");
+  header("Location: ../usuario/datos.php?idEq=$equipo&idP=$partido");
 }else {
   header("Location: ../usuario/index.php");
 }
